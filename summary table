@@ -1,0 +1,90 @@
+Sub add_data()
+
+Dim lrow As Integer
+Dim Col1 As Integer
+Dim Col2 As Integer
+
+
+For i = 1 To 2
+
+dt = Range("D" & i)
+dt1 = Range("D" & i + 1)
+
+y = 12 * i
+
+
+
+Cells(10, y).Value = dt
+
+    Cells(12, y).Value = "Present Ucif"
+
+
+    Cells(12, y + 1).Value = "Os"
+    
+    Cells(12, y + 2).Value = "Attrn_flag"
+    
+    Cells(12, y + 3).Value = "Attrn_amt"
+    
+    Cells(12, y + 4).Value = "Ntb_flag"
+    Cells(12, y + 5).Value = "Ntb_amt"
+    
+    Cells(12, y + 6).Value = "Os_Previous"
+    Cells(12, y + 7).Value = "Diff"
+    
+    Cells(12, y + 8).Value = "Incr"
+    Cells(12, y + 9).Value = "Decrease"
+    
+    Cells(11, y + 1).Select
+    ActiveCell.FormulaR1C1 = "=SUBTOTAL(9,R[2]C:R[50000]C)"
+    
+    Cells(11, y + 3).Select
+    ActiveCell.FormulaR1C1 = "=SUBTOTAL(9,R[2]C:R[50000]C)"
+    Cells(11, y + 5).Select
+    ActiveCell.FormulaR1C1 = "=SUBTOTAL(9,R[2]C:R[50000]C)"
+    Cells(11, y + 8).Select
+    ActiveCell.FormulaR1C1 = "=SUBTOTAL(9,R[2]C:R[50000]C)"
+    Cells(11, y + 9).Select
+    ActiveCell.FormulaR1C1 = "=SUBTOTAL(9,R[2]C:R[50000]C)"
+  
+  
+  Next
+  
+
+
+
+
+
+
+
+End Sub
+Sub table()
+
+Dim lrow As Integer
+Dim Col1 As Integer
+Dim Col2 As Integer
+Dim y As Integer
+Dim z As Integer
+
+
+
+For i = 1 To 13
+
+y = 12 * i
+z = 12 * (i + 1)
+
+
+Cells(i + 4, 1).Value = Cells(1, y).Value
+Cells(i + 4, 2).Value = Cells(1, z).Value
+Cells(i + 4, 3).Value = Cells(2, y + 1).Value
+Cells(i + 4, 4).Value = Cells(2, y + 3).Value
+Cells(i + 4, 5).Value = Cells(2, z + 9).Value
+Cells(i + 4, 6).Value = Cells(2, z + 8).Value
+Cells(i + 4, 7).Value = Cells(2, z + 5).Value
+Cells(i + 4, 8).Value = Cells(2, z + 1).Value
+
+
+Next
+End Sub
+
+
+
