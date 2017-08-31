@@ -2,8 +2,8 @@ Sub FilterPivotTable()
 
 Dim lrow As Integer
 Dim Col1 As Integer
-*Dim Col2 As Integer
-*this is a comment
+Dim Col2 As Integer
+
 For i = 1 To 2
 
 dt = Range("D" & i)
