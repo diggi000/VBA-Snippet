@@ -1,0 +1,18 @@
+Sub car()
+Dim check As Integer
+Dim lrow As Integer
+
+For i = 3 To 375
+check = Range("C" & i).Value
+If check = 1 Then
+
+Else
+Range("A" & i & ":B" & i).Copy
+lrow = Range("E" & Rows.Count).End(xlUp).Row
+lrow = lrow + 1
+Range("E" & lrow).PasteSpecial xlPasteValues
+Range("C" & i).Value = check - 1
+End If
+
+Next
+End Sub
