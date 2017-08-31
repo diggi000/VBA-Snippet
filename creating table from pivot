@@ -9,7 +9,7 @@ For i = 1 To 2
 dt = Range("D" & i)
 
 Application.ScreenUpdating = False
-    ActiveSheet.Range("B1") = dt
+ActiveSheet.Range("B1") = dt
 Range("A4:B4").Select
 Range(Selection, Selection.End(xlDown)).Select
     Selection.Copy
@@ -28,16 +28,6 @@ ActiveCell.FormulaR1C1 = "=IF(RC[-1]=1,RC[-2],0)"
 Cells(100000, z - 1).Select
 
 lrow = Cells(Rows.Count, z - 1).End(xlUp).Row
-
-' edit part
-    
-    Col1 = y
-    Col2 = y + 1
-    Range(Cells(lrow, Col1), Cells(lrow, Col2)).Select
-    Selection.Delete Shift:=xlUp
-
-
-
 
    
 
@@ -95,6 +85,8 @@ Next
 
 Application.ScreenUpdating = True
 End Sub
+
+
 
 
 
